@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:componentes/src/pages/home_page_temp.dart';
+//import 'package:componentes/src/pages/home_page_temp.dart';
+import 'package:componentes/src/pages/home_page.dart';
  
 void main() => runApp(MyApp());
  
@@ -10,7 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: HomePageTemp(),
+      //home: HomePageTemp(),
+      home: HomePage(),
     );
   }
 }
