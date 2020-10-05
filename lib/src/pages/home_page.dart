@@ -1,3 +1,4 @@
+import 'package:componentes/src/providers/menu_provider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,26 +14,34 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _crearLista() {
-    return ListView(
-      children: _crearElementos()
+    //print (menuprovider.opciones);
+    return FutureBuilder(
+      future:menuprovider.cargarData(),
+      initialData: [],
+      builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot){
+        //print(snapshot.data);
+        return ListView(
+          children: _crearElementos(snapshot.data),
+        );
+      },
     );
   }
 
-  List<Widget> _crearElementos() {
-    final lista = new List<Widget>();
+  List<Widget> _crearElementos(List<dynamic> data){
+    
+    final List<Widget> opciones = [];
+    
+    data.forEach((opt) {
+      final widgetTemporal = ListTile(
+        title: Text(opt['texto']),
+        leading: Icon(Icons.account_circle, color: Colors.blue),
+        trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
+      );
 
-    lista.add(ListTile(
-      title: Text('Hola Mundo!'),
-    ));
-    lista.add(Divider());
-    lista.add(ListTile(
-      title: Text('Hola Mundo!'),
-    ));
-    lista.add(Divider());
-    lista.add(ListTile(
-      title: Text('Hola Mundo!'),
-    ));
-    lista.add(Divider());
-    return lista;
+      opciones..add(widgetTemporal)
+              ..add(Divider());
+    });
+
+    return opciones;
   }
 }
