@@ -1,7 +1,7 @@
 import 'package:componentes/src/pages/alert_page.dart';
 import 'package:componentes/src/providers/menu_provider.dart';
 import 'package:componentes/src/utils/icons_string_utils.dart';
-import 'package:componentes/src/utils/rutas_strings_utils.dart';
+//import 'package:componentes/src/utils/rutas_strings_utils.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -41,12 +41,9 @@ class HomePage extends StatelessWidget {
         leading: getIcono(opt['icon']),
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
         onTap: (){
-          //getRuta(opt['ruta']);
-          final route = MaterialPageRoute(
-            builder: (context) {
-              return getRutas(opt['ruta']);
-            });
-          Navigator.push(context, route);
+          //final route = MaterialPageRoute( builder: (context) => getRutas(opt['ruta']));
+          //Navigator.push(context, route);
+          Navigator.pushNamed(context, opt['ruta'])
         },
       );
 
