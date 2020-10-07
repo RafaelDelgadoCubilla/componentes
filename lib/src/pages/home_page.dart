@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
         onTap: (){
           //final route = MaterialPageRoute( builder: (context) => getRutas(opt['ruta']));
           //Navigator.push(context, route);
-          Navigator.pushNamed(context, opt['ruta'])
+          Navigator.pushNamed(context, opt['ruta']);
         },
       );
 
