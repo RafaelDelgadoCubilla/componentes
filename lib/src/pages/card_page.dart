@@ -45,7 +45,7 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
+    final tarjeta = Container(
       child: Column(
         children: [
           FadeInImage(
@@ -62,5 +62,22 @@ class CardPage extends StatelessWidget {
         ],
       ),
     );
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0), 
+        color: Colors.red,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.red,
+            blurRadius:2.0,
+            spreadRadius: 1.0,
+            offset: Offset(-1, -1) 
+          )
+        ]
+      ),
+      child: ClipRRect(
+        child: tarjeta,
+      ),
+    )
   }
 }
