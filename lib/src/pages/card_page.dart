@@ -78,6 +78,6 @@ class CardPage extends StatelessWidget {
       child: ClipRRect(
         child: tarjeta,
       ),
-    )
+    );
   }
 }
