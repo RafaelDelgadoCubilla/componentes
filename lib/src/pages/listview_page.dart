@@ -107,7 +107,8 @@ class _ListaPageState extends State<ListaPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator()
+              CircularProgressIndicator(),
+              //FlatButton(onPressed: _fetchData, child: Text('Pulsa')),
             ],
           ),
           SizedBox(width: 15.0,)
