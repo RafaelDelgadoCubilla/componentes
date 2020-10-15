@@ -11,6 +11,7 @@ class CardPage extends StatelessWidget {
         padding: EdgeInsets.all(20.0),
         children: [
           _cardTipo1(),
+          SizedBox(height: 30.0),
           _cardTipo2(),
         ],
       )
@@ -52,11 +53,11 @@ class CardPage extends StatelessWidget {
             image: NetworkImage('https://iso.500px.com/wp-content/uploads/2014/06/W4A2827-1-3000x2000.jpg'),
             placeholder: AssetImage('assets/jar-loading.gif'),
             fadeInDuration: Duration(milliseconds: 200),
-            //height: 400,
-            fit: BoxFit.fill
+            //height: 300,
+            fit: BoxFit.cover
             ),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(10.0),
             child: Text('No sé lo que poner'),
           )
         ],
@@ -65,17 +66,18 @@ class CardPage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0), 
-        color: Colors.red,
+        color: Colors.white,
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Colors.red,
-            blurRadius:2.0,
-            spreadRadius: 1.0,
-            offset: Offset(-1, -1) 
+            color: Colors.black26,
+            blurRadius:10.0,
+            spreadRadius: 2.0,
+            offset: Offset(2.0, 10.0) 
           )
         ]
       ),
       child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
         child: tarjeta,
       ),
     );
